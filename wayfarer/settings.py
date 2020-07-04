@@ -25,7 +25,7 @@ SECRET_KEY = 't$g6ub6w8mm)!yv%mqn47)u9$n@*r2+1h$0(kxru&4svh^anpo'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['wayfarerifi.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -71,17 +71,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'wayfarer.wsgi.application'
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'wayfarer',
-        'PASSWORD': '123'
-    }
-}
+import dj_database_url
+POSTGRES_URL = "HEROKU_POSTGRESQL_wayfarer_URL"
+DATABASES = {'default': dj_database_url.config(default=os.environ[POSTGRES_URL])}
 
 
 # Password validation

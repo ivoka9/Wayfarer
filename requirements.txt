@@ -22,3 +22,8 @@ toml==0.10.1
 virtualenv==20.0.23
 whitenoise==5.1.0
 wrapt==1.12.1
+# stack overflow
+dj-database-url==0.3.0
+dj-static==0.0.6
+static3==0.5.1
+wsgiref==0.1.2
