@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 't$g6ub6w8mm)!yv%mqn47)u9$n@*r2+1h$0(kxru&4svh^anpo'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['wayfarerifi.herokuapp.com','127.0.0.1']
 
