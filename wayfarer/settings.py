@@ -71,13 +71,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'wayfarer.wsgi.application'
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-import dj_database_url
-POSTGRES_URL = "HEROKU_POSTGRESQL_wayfarer_URL"
-DATABASES = {'default': dj_database_url.config(default=os.environ[POSTGRES_URL])}
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'wayfarer',
+        'PASSWORD': '123'
+    }
+}
 
 
 # Password validation
